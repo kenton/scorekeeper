@@ -1,0 +1,26 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export class TitleBar extends React.Component {
+  renderSubtitle(){
+      if (this.props.subtitle) {
+        return(<h2>{this.props.subtitle}</h2>);
+      } else {
+        //noop
+      }
+  }
+  render(){
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        {this.renderSubtitle()}
+      </div> 
+    );
+  }
+}
+
+TitleBar.propTypes = {
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string
+    
+}
