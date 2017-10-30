@@ -8,9 +8,12 @@ export class App extends React.Component {
     render() {
         return (
             <div>
-                <TitleBar title={this.props.title} />
-                <PlayerList players={this.props.players} />
-                <AddPlayer />
+                <TitleBar title={this.props.title} subtitle={this.props.subtitle} />
+                <div className="wrapper">
+                    <PlayerList players={this.props.players} />
+                    <AddPlayer />
+                </div>
+
             </div>
         );
     }
@@ -18,5 +21,6 @@ export class App extends React.Component {
 
 App.proTypes = {
     title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     players: PropTypes.array.isRequired
 }
